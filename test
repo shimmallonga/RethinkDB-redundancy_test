@@ -7,8 +7,10 @@ conn=r.connect(host='localhost',
                 ).repl()
 
 print r.db_list().run(conn)
+# I names my table zoo becuase i was planning on watching zootopia 
+# repalce test and zoo with your db and table names
 zoo=r.db('test').table('zoo')
-print "The total amount of data in the Test DB and Zoo table is"
+print "The total amount ofrows in the Test DB and Zoo table is"
 print zoo.count().run(conn)
 #check=zoo.wait(wait_for='ready_for_writes',timeout=2).run(conn)
 #print check
@@ -24,8 +26,9 @@ while i<5:
         if check == error:
                 conn.close()
         else:
+		zoo.count().run.(conn)
 #       print "Adding data"
-                zoo.insert({ 'name': 'Star Trek TNG', 'episodes': '178' }).run()
+#                zoo.insert({ 'name': 'Star Trek TNG', 'episodes': '178' }).run()
 #       print "Current number:"
 #       print zoo.count().run()
                 print ".",
