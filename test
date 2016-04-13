@@ -10,9 +10,9 @@ print r.db_list().run(conn)
 zoo=r.db('test').table('zoo')
 print "The total amount of data in the Test DB and Zoo table is"
 print zoo.count().run(conn)
-check=zoo.wait(wait_for='ready_for_writes',timeout=2).run(conn)
-print check
-error="{u'ready': 1}"
+#check=zoo.wait(wait_for='ready_for_writes',timeout=2).run(conn)
+#print check
+#error="{u'ready': 1}"
 
 if check == error:
         conn.close()
